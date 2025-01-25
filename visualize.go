@@ -12,7 +12,7 @@ func generateDotFile(circuit Circuit) string {
 
 	// Add operation nodes
 	for i, op := range circuit.Operations {
-		dot += fmt.Sprintf("\top%d [label=\"%s\"];\n", i, op.Name)
+		dot += fmt.Sprintf("\top%d [style=filled,fillcolor=khaki1,label=\"%s\"];\n", i, op.Name)
 		// Add edges from inputs to operation
 		for _, input := range op.Inputs {
 			dot += fmt.Sprintf("\t\"%s\" -> op%d;\n", input, i)
